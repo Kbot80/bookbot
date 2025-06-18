@@ -32,8 +32,13 @@ def count_letters(path):
 
 
 def main():
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
     # get_book_text("./books/frankenstein.txt")
     count_words("./books/frankenstein.txt")
+    print("--------- Character Count -------")
     count_letters("./books/frankenstein.txt")
+    print("============= END ===============")
 
 main()

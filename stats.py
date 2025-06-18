@@ -16,6 +16,7 @@ def count_words(path):
                 count += 1
     print(f"{count} words found in the document")
 
+
 def count_letters(path):
     character_counter = {}
     with open(path) as f:
@@ -30,10 +31,9 @@ def count_letters(path):
         print(character_counter)
 
 
-
 def main():
     # get_book_text("./books/frankenstein.txt")
-    # count_words("./books/frankenstein.txt")
+    count_words("./books/frankenstein.txt")
     count_letters("./books/frankenstein.txt")
 
 main()

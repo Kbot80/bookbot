@@ -12,7 +12,7 @@ def count_words(path):
         for word in words:
             if word in words:
                 count += 1
-        return f"{count} words found in the document"
+        return f"Found {count} total words"
 
 
 character_counter = {}

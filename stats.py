@@ -1,7 +1,7 @@
 def get_book_text(path):
     with open(path) as f:
         file_contents = f.read()
-        print(file_contents)
+    return file_contents
 
 
 def count_words(path):
@@ -12,11 +12,11 @@ def count_words(path):
         for word in words:
             if word in words:
                 count += 1
-    print(f"{count} words found in the document")
+        return f"{count} words found in the document"
 
 
+character_counter = {}
 def count_letters(path):
-    character_counter = {}
     with open(path) as f:
         file_contents = f.read()
         screening_text = file_contents.lower()
@@ -25,17 +25,16 @@ def count_letters(path):
                 character_counter[letter] = 1
             else:
                 character_counter[letter] += 1
-        print(character_counter)
+        return character_counter
 
 
-def main():
-    print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
-    # get_book_text("./books/frankenstein.txt")
-    print("----------- Word Count ----------")
-    count_words("./books/frankenstein.txt")
-    print("--------- Character Count -------")
-    count_letters("./books/frankenstein.txt")
-    print("============= END ===============")
+def sort_key(a):
+    return a["num"]
 
-main()
+
+def sorted_characters(character_counter):
+    sorted = []
+    for character in character_counter:
+        sorted.append({"ch":character, "num": character_counter[character]})
+    sorted.sort(reverse = True, key = sort_key)
+    return sorted

@@ -1,5 +1,3 @@
-path = ""
-words = []
 def get_book_text(path):
     with open(path) as f:
         file_contents = f.read()
@@ -27,15 +25,14 @@ def count_letters(path):
                 character_counter[letter] = 1
             else:
                 character_counter[letter] += 1
-
         print(character_counter)
 
 
 def main():
     print("============ BOOKBOT ============")
     print("Analyzing book found at books/frankenstein.txt...")
-    print("----------- Word Count ----------")
     # get_book_text("./books/frankenstein.txt")
+    print("----------- Word Count ----------")
     count_words("./books/frankenstein.txt")
     print("--------- Character Count -------")
     count_letters("./books/frankenstein.txt")
